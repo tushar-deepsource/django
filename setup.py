@@ -7,8 +7,7 @@ from setuptools import setup
 
 # Allow editable install into user site directory.
 # See https://github.com/pypa/pip/issues/7953.
-site.ENABLE_USER_SITE = '--user' in sys.argv[1:]
-
+site.ENABLE_USER_SITE = "--user" in sys.argv[1:]
 
 
 # Warn if we are installing over top of an existing installation. This can
@@ -34,7 +33,8 @@ setup()
 
 
 if overlay_warning:
-    sys.stderr.write("""
+    sys.stderr.write(
+        """
 
 ========
 WARNING!
@@ -51,4 +51,6 @@ should manually remove the
 
 directory and re-install Django.
 
-""" % {"existing_path": existing_path})
+"""
+        % {"existing_path": existing_path}
+    )
